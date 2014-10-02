@@ -1,3 +1,5 @@
-source 'https://rubygems.org
+source 'https://rubygems.org'
 
-ruby '2.1.0'
+group :development, :test do
+  gem 'rspec-rails', '~> 3.0.0'
+end
