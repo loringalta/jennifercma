@@ -1,17 +1,13 @@
-# SQLite version 3.x
-#   gem install sqlite3
-#
-#   Ensure the SQLite 3 gem is defined in your Gemfile
-#   gem 'sqlite3'
-#
 development:
   adapter: postgresql
   encoding: unicode
   database: test-postgres_development
   pool: 5
-  host: localhost
-  username: 
+  username: jenniferma
   password:
+  host: localhost
+  post: 5433
+
 
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".
@@ -21,13 +17,16 @@ test:
   encoding: unicode
   database: test-postgres_test
   pool: 5
-  username: 
+  username: jenniferma
   password:
+  host: localhost
+  port: 5433
+
 
 production:
   adapter: postgresql
   encoding: unicode
   database: test-postgres_production
   pool: 5
-  username: 
+  username: jenniferma
   password:
