@@ -6,7 +6,7 @@ development:
   username: jenniferma
   password:
   host: localhost
-  post: 5433
+  post: 5432
 
 
 # Warning: The database defined as "test" will be erased and
@@ -20,7 +20,7 @@ test:
   username: jenniferma
   password:
   host: localhost
-  port: 5433
+  port: 5432
 
 
 production:
