@@ -3,7 +3,7 @@ development:
   encoding: unicode
   database: test-postgres_development
   pool: 5
-  username: jennifer
+  username: 
   password:
   host: localhost
   post: 5432
@@ -17,7 +17,7 @@ test:
   encoding: unicode
   database: test-postgres_test
   pool: 5
-  username: jennifer
+  username: 
   password:
   host: localhost
   port: 5432
@@ -28,5 +28,5 @@ production:
   encoding: unicode
   database: test-postgres_production
   pool: 5
-  username: jennifer
+  username:
   password:
