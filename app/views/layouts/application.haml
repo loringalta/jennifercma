@@ -1,0 +1,10 @@
+!!!
+%html
+  %head
+    %title
+    = stylesheet_link_tag 'application', media: 'all'
+    = google_webfonts_link_tag "Raleway"
+    = google_webfonts_link_tag "Open Sans"
+    -# = javascript_include_tag 'application', media: 'all'
+    = csrf_meta_tags
+  = yield
