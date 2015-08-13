@@ -66,6 +66,8 @@ GEM
       tilt
     hike (1.2.3)
     i18n (0.7.0)
+    jquery-ui-rails (4.2.1)
+      railties (>= 3.2.16)
     json (1.8.3)
     loofah (2.0.2)
       nokogiri (>= 1.5.9)
@@ -147,6 +149,7 @@ DEPENDENCIES
   font-awesome-rails
   google-webfonts
   haml
+  jquery-ui-rails (~> 4.2.1)
   pg
   rails (= 4.2.1)
   rake (~> 10.4)
