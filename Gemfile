@@ -8,7 +8,7 @@ gem 'bootstrap-sass', '~> 3.2.0'
 gem 'font-awesome-rails'
 gem 'jquery-ui-rails', '~> 4.2.1'
 
-# gem 'activesupport', '~> 4.2.1'
+gem 'activesupport', '~> 4.2.1'
 gem 'uglifier', '>= 1.3.0'
 gem 'coffee-rails', '~> 4.0.0'
 gem 'js-routes'
@@ -41,7 +41,7 @@ group :development, :test do
 #   gem 'active_record_query_trace'
   gem 'rspec-rails'
   gem 'capybara'
-  # gem 'factory_girl_rails'
+  gem 'factory_girl_rails'
 #   gem 'faker'
   # gem 'cucumber-rails', require: false
 # # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
@@ -49,6 +49,6 @@ group :development, :test do
 #   gem 'pry-nav'
 #   gem 'launchy'
 #
-#   gem 'poltergeist'
+  gem 'poltergeist'
   gem 'selenium-webdriver'
 end

@@ -40,7 +40,7 @@ $ ->
         return
     ).done () ->
       $(window).resize ->
-          columns = undefined
+          columns = 4
           winwid = $(window).width()
           if 500 > winwid > 100
             columns = 1
@@ -51,11 +51,11 @@ $ ->
           else if winwid > 1501
             columns = 4
           console.log(columns)
-          dashboard_size = Math.round(($(window).width()*.75) / columns)
+          dashboard_size = Math.round((winwid*.75) / columns)
           console.log(dashboard_size)
           $('.gridly').gridly(
             base: dashboard_size
-            gutter: 4
+            gutter: columns
             columns: columns
           )
           i = 30
