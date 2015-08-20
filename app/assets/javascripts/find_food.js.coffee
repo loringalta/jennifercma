@@ -42,14 +42,14 @@ $ ->
       $(window).resize ->
           columns = undefined
           winwid = $(window).width()
-          if winwid <= 1500 and winwid >= 1000
-            columns = 3
-          else if winwid < 600 and winwid > 400
-            columns = 2
-          else if winwid > 1000
-            columns = 4
-          else
+          if 500 > winwid > 100
             columns = 1
+          else if 800 > winwid > 500
+            columns = 2
+          else if 1500 > winwid > 800
+            columns = 3
+          else if winwid > 1501
+            columns = 4
           console.log(columns)
           dashboard_size = Math.round(($(window).width()*.75) / columns)
           console.log(dashboard_size)
