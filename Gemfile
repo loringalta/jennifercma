@@ -4,7 +4,7 @@ gem 'rails', '4.2.1'
 gem 'pg'
 
 gem 'sass-rails', '~> 4.0.3'
-# gem 'bootstrap-sass', '~> 3.2.0'
+gem 'bootstrap-sass', '~> 3.2.0'
 gem 'font-awesome-rails'
 gem 'jquery-ui-rails', '~> 4.2.1'
 
@@ -17,12 +17,13 @@ gem 'jquery-rails'
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
 gem 'turbolinks'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
-# gem 'jbuilder', '~> 2.0'
+gem 'jbuilder', '~> 2.0'
 gem 'i18n', :git => 'https://github.com/svenfuchs/i18n.git'
 # gem 'd3_rails'
 # gem 'net-ldap', '~> 0.3.1'
 # gem 'devise', '~> 3.0.0'
 # gem 'devise_ldap_authenticatable'
+
 # gem 'figgy'
 # gem 'quiet_assets'
 # gem 'will_paginate'

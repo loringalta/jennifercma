@@ -2,13 +2,13 @@ html {
     -webkit-font-smoothing: antialiased;
     text-rendering: optimizeLegibility;
     -moz-osx-font-smoothing: grayscale;
+    margin: 0;
 }
 
 body {
   background-color: $poy;
-  margin-top: 0;
-  margin-left: 0;
-  margin-right: 0;
-  margin-bottom: 0;
+  //margin: 0;
+  //height: 100%;
+  //width: 100%;
   font-family: 'Catamaran', sans-serif;
 }

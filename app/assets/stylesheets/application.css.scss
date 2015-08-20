@@ -2,3 +2,15 @@
 @import 'font-awesome';
 @import 'header';
 @import 'home';
+@import 'find_food';
+@import 'bootstrap-custom';
+@import 'sDashboard';
+@import 'jquery.gridly';
+@import 'widgets';
+nav, section, {
+  display: block;
+}
+
+a:active, a:hover {
+  outline: 0;
+}

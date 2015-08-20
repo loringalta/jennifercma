@@ -1,0 +1,15 @@
+.widget-dashboard
+  %table
+    %thead
+      %tr
+        %th Item Name
+    %tbody
+      %td Item Name
+      %td Brand Name
+      - search_body.each do |s|
+        %tr= s.item_name
+        %tr= s.brand_name
+        %tr= s.calories
+        %tr= s.total_fat
+        %tr= s.serving_weight_gram
+        %tr= s.total_carb

@@ -11,4 +11,16 @@
 // about supported directives.
 //
 //= require jquery
-//= require jquery_ujs
+//= require jquery-ui
+//= require init
+//= require jquery.gridster.min
+//= require create_search_finding
+//= require find_food
+//= require init_widgets
+//= require mocha
+//= require sinon
+//= require flotr2
+//= require chai
+//= require jquery.dataTables
+//= require dashboard
+//= require jquery.gridly
