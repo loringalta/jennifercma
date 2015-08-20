@@ -19,6 +19,7 @@ gem 'turbolinks'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 2.0'
 gem 'i18n', :git => 'https://github.com/svenfuchs/i18n.git'
+gem 'rails_12factor'
 # gem 'd3_rails'
 # gem 'net-ldap', '~> 0.3.1'
 # gem 'devise', '~> 3.0.0'
