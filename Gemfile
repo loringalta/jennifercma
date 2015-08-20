@@ -38,11 +38,10 @@ gem 'rake', '~> 10.4'
 # gem 'unicorn'
 gem 'google-webfonts'
 gem 'unirest'
-group :development, :test do
 #   gem 'active_record_query_trace'
-  gem 'rspec-rails'
-  gem 'capybara'
-  gem 'factory_girl_rails'
+gem 'rspec-rails'
+gem 'capybara'
+gem 'factory_girl_rails'
 #   gem 'faker'
   # gem 'cucumber-rails', require: false
 # # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
@@ -50,6 +49,5 @@ group :development, :test do
 #   gem 'pry-nav'
 #   gem 'launchy'
 #
-  gem 'poltergeist'
-  gem 'selenium-webdriver'
-end
+gem 'poltergeist'
+gem 'selenium-webdriver'
