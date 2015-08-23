@@ -15,7 +15,7 @@
 
 .search_form {
   height: 100px;
-  width: 300px;
+  width: 100%;
   margin: auto;
 }
 
@@ -30,11 +30,11 @@
   display: inline-block;
   height: 36px;
   font-weight: 500;
-  font-size: 14px;
+  font-size: 12px;
   color: rgba(0,0,0,0.9);
   line-height: 36px;
   text-align: center;
-  letter-spacing: 1.0px;
+  letter-spacing: 3px;
   padding-top: 0;
   padding-left: 8px;
   padding-right: 8px;
@@ -46,11 +46,26 @@
   border: none;
 }
 
-input[type="submit"] {
+input#add-query{
+  display: none;
+}
+
+input#add-submit{
+  display: none;
+  transition: background-color 0.3s ease;
+  height: 36px;
+  background: #672E45;
+  color: white;
+  cursor: pointer;
+  width: 75px;
+}
+
+input[name="submit-search"] {
   display: inline-block;
   transition: background-color 0.3s ease;
   height: 36px;
   background: #672E45;
   color: white;
   cursor: pointer;
+  width: 75px;
 }

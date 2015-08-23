@@ -12,11 +12,8 @@
 //
 //= require jquery
 //= require jquery-ui
-//= require init
-//= require jquery.gridster.min
 //= require create_search_finding
 //= require find_food
-//= require init_widgets
 //= require mocha
 //= require sinon
 //= require flotr2

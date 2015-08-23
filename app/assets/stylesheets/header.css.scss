@@ -3,6 +3,8 @@ nav {
  width: 100%;
  top: 0;
  z-index: 800;
+ background: $yellow;
+ box-shadow: 5px 5px 0 rgba(0,0,0,.1);
  // border-bottom-style: solid;
  // border-width: 1px;
  // border-bottom-color: #fff;
@@ -41,9 +43,11 @@ nav {
       float: right;
     }
     a {
+      letter-spacing: 2px;
        text-decoration: none;
-       color: #fff;
+       color: black;
        font-size: 0.9em;
+       font-weight: bold;
      }
    }
  }

@@ -2,6 +2,11 @@
   .search_form
     %form_for{action: 'find_foods', method: 'POST', remote: true}
       #search_query.button
-        %input{placeholder: "search", name: "search_query", class: "buttonFlat"}
+        %input{placeholder: 'search', name: 'search_query', class: 'buttonFlat'}
       #submit.button
-        %input{type: "submit", value: "submit", class: "buttonFlat"}
+        %input{name: 'submit-search', value: 'submit', class: 'buttonFlat'}
+    %form_for{action: 'add_foods', method: 'POST', remote: true}
+      .button
+        %input#add-query{placeholder: 'add', name: 'add-query', class: 'buttonFlat'}
+      #add-submit.button
+        %input#add-submit{name: 'add-submit', value: 'add', class: 'buttonFlat'}

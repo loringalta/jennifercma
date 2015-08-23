@@ -10,31 +10,22 @@ $ ->
           # dataType: 'json'
           url: '/find_food/dashboard').success((data) ->
             $('#search-data').html(data)
-            columns = 4
-            winwid = $(window).width()
-            if 500 > winwid > 100
-              columns = 1
-            else if 800 > winwid > 500
-              columns = 2
-            else if 1500 > winwid > 800
-              columns = 3
-            else if winwid > 1501
-              columns = 4
-            dashboard_size = Math.round(($(window).width()*.75) / columns)
             $('.gridly').gridly(
-              base: dashboard_size
+              base: 300
               gutter: 4
-              columns: columns
+              'responsive': true
             )
             $.ajax(
               type: 'GET'
               dataType: 'json'
-              data: {dashboard_size: dashboard_size}
+              #data: {dashboard_size: dashboard_size}
               url: 'find_food/food_info').success((data)->
+                $('input#add-submit').show('slide')
+                $('input#add-query').show('slide')
                 id = 0
                 for item in data
                   do (item) ->
-                    $(".brick-large-#{id}").width(dashboard_size)
+                    #$(".brick-large-#{id}").width(dashboard_size)
                     id++
                     table = "<table class = 'pure-table'><thead><tr><th>#{item.name}</th></tr></thead>"
                     for nutrient in item.nutrients
@@ -48,30 +39,5 @@ $ ->
             )
         return
         return
-    ).done () ->
-      $(window).resize ->
-          columns = 4
-          winwid = $(window).width()
-          if 500 > winwid > 100
-            columns = 1
-          else if 800 > winwid > 500
-            columns = 2
-          else if 1500 > winwid > 800
-            columns = 3
-          else if winwid > 1501
-            columns = 4
-          console.log(columns)
-          dashboard_size = Math.round((winwid*.75) / columns)
-          console.log(dashboard_size)
-          $('.gridly').gridly(
-            base: dashboard_size
-            gutter: columns
-            columns: columns
-          )
-          i = 30
-          while i >= 0
-            $(".brick-large-#{i}").width(dashboard_size)
-            i--
-  setDash = ->
-
+    ).done
   return

@@ -1,0 +1,9 @@
+= form_tag 'signup', class: 'main-form first', method: 'GET' do
+  .main-form.title
+    %h1 Sign-up
+  .main-form.body
+    = text_field_tag :username, nil, class: 'main-form body input', placeholder: 'Username'
+    = text_field_tag :email, nil, class: 'main-form body input', placeholder: 'Email Address'
+    = text_field_tag :password, nil, class: 'main-form body input', placeholder: "Password"
+    %button.btn Clear
+    %button.btn Register

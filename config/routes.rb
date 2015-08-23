@@ -1,10 +1,9 @@
 Rails.application.routes.draw do
   resources :users
   resources :find_foods
-  get 'users/new'
-  root                'static_pages#home'
+  root                'sessions#login'
   # post   '/'       => 'foods#dashboard'
-  get    'signup'              => 'users#new'
+  get    'signup'              => 'static_pages#home'
   get    'login'               => 'sessions#new'
   post   'login'               => 'sessions#create'
   delete 'logout'              => 'sessions#destroy'
