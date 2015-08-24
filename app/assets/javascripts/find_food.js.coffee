@@ -5,6 +5,7 @@ $ ->
       type: 'POST'
       url: '/find_foods'
       data: {'name': query}).success((data) ->
+        $('.loading-image').css('display', 'inline-block')
         $.ajax(
           type: 'GET'
           # dataType: 'json'
@@ -18,22 +19,21 @@ $ ->
             $.ajax(
               type: 'GET'
               dataType: 'json'
-              #data: {dashboard_size: dashboard_size}
               url: 'find_food/food_info').success((data)->
-                $('input#add-submit').show('slide')
-                $('input#add-query').show('slide')
+                if data.empty
+                  $('.search_form h1').html(data.empty)
                 id = 0
                 for item in data
                   do (item) ->
-                    #$(".brick-large-#{id}").width(dashboard_size)
                     id++
                     table = "<table class = 'pure-table'><thead><tr><th>#{item.name}</th></tr></thead>"
                     for nutrient in item.nutrients
                       do (nutrient) ->
                         table += "<tr><td>#{nutrient.name}</td><td>#{nutrient.value} #{nutrient.unit}</td></tr>"
                     table += "</tbody></table"
-                    brick = "<div class='brick-large-#{id}'>#{table}<div class='delete'></div></div>"
+                    brick = "<div class='brick large-#{id}'><a class = 'delete-widget' href = '#'>x</a>#{table}</div>"
                     $('.gridly').append(brick)
+                $('.loading-image').hide('slide')
                 )
             return
             )

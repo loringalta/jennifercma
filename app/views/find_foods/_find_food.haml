@@ -1,12 +1,18 @@
 .container
   .search_form
-    %form_for{action: 'find_foods', method: 'POST', remote: true}
-      #search_query.button
-        %input{placeholder: 'search', name: 'search_query', class: 'buttonFlat'}
+    = form_tag(method: "POST", remote: true) do      #search_query.button
+      .button
+        %input{placeholder: 'search', name: 'search_query', class: 'buttonFlat', id: "query", onfocus: "this.placeholder =''"}
       #submit.button
         %input{name: 'submit-search', value: 'submit', class: 'buttonFlat'}
-    %form_for{action: 'add_foods', method: 'POST', remote: true}
+    .loading-image
+      = fa_icon 'spinner spin lg'
+    = form_tag(method: 'POST', remote: true, id: "add-submit") do
       .button
-        %input#add-query{placeholder: 'add', name: 'add-query', class: 'buttonFlat'}
+        %input#add-query{placeholder: 'add', name: 'add-query', class: 'buttonFlat', onfocus: "this.placeholder =''"}
       #add-submit.button
         %input#add-submit{name: 'add-submit', value: 'add', class: 'buttonFlat'}
+    = form_tag(method: "DELETE", remote: true, id: "delete") do
+      .button
+        %input#delete-submit{name: "delete", value: "clear", class: 'buttonFlat'}
+    %h1

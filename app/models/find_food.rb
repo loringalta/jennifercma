@@ -3,16 +3,14 @@ require "uri"
 require 'json'
 require 'pp'
 class FindFood < ActiveRecord::Base
-  @@api = "nCvF2BktudcbF39ojuK0HZv97p0AGYbSTSyIBTfi"
-  def self.get_foods(search_query)
-    get_usda_food_no(search_query)
-  end
+  serialize :nutrients
+  @@api = "mLGtkAwgswBDghnwNP6nxQEsu0gXYBOGAp1WBhWn"
 
   def self.get_usda_food_no(search_query)
     no_list = []
-    pp search_query
-    usda = "http://api.nal.usda.gov/ndb/search/?format=json&q=#{search_query}&sort=r&max=25&offset=0&api_key=#{@@api}"
+    usda = "http://api.nal.usda.gov/ndb/search/?format=json&q=#{search_query}&sort=r&max=5&offset=0&api_key=#{@@api}"
     response = Unirest.get usda
+    return "no_match" unless response.code != 404
     response.body["list"]["item"].each do |item|
       no_list << item["ndbno"]
     end
@@ -30,24 +28,20 @@ class FindFood < ActiveRecord::Base
     food_list
   end
 
-  def self.parse_nutrients(nutrient)
-    nutrient_ids = ["208", "203", "204", "205", "269"]
-    food_nutrients = []
-    nutrient.each do |item|
-      if nutrient_ids.include? item["nutrient_id"]
-        food_nutrients << FoodNutrient.new(item["name"], item["unit"], item["value"])
-      end
-    end
-    food_nutrients
-  end
-
   def self.json_parse_result(search_query)
     obj_array = []
-    food_list = get_foods(search_query)
-    food_list.each do |h|
-      name = h["name"]
-      food_nutrients = parse_nutrients(h["nutrients"])
-      obj_array << FoodItem.new(h["ndbno"], name, food_nutrients)
+    food_list = get_usda_food_no(search_query)
+    if food_list.is_a? String
+      obj_array = ["no results"]
+    else
+      food_list.each do |item|
+        new_food = FoodItem.new
+        food_nutrients = new_food.parse_nutrients(item["nutrients"])
+        new_food.id = item["ndbno"]
+        new_food.name = item["name"]
+        new_food.nutrients = food_nutrients
+        obj_array << new_food
+      end
     end
     obj_array
   end

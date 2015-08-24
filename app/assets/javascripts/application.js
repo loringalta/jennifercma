@@ -14,6 +14,9 @@
 //= require jquery-ui
 //= require create_search_finding
 //= require find_food
+//= require add_food
+//= require delete_food
+//= require delete_widget
 //= require mocha
 //= require sinon
 //= require flotr2
@@ -21,3 +24,4 @@
 //= require jquery.dataTables
 //= require dashboard
 //= require jquery.gridly
+//= require turbolinks

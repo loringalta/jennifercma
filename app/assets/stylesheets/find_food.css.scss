@@ -1,11 +1,7 @@
 .container {
-  width: 100%;
-  padding-left: 15px;
-  padding-right: 15px;
-  padding-top: 80px;
-  margin-right: auto;
-  margin-left: auto;
-  position: relative;
+  width: 80%;
+  margin: auto;
+  padding-top: 100px;
 }
 
 .search_dashboard{
@@ -14,7 +10,8 @@
 }
 
 .search_form {
-  height: 100px;
+  display: inline-block;
+  height: 50px;
   width: 100%;
   margin: auto;
 }
@@ -24,34 +21,47 @@
   background-color: rgba(0,0,0,0);
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
-
+form {
+  display: inline-block;
+}
+/* top right bottom left*/
 .buttonFlat {
   text-transform: uppercase;
   display: inline-block;
   height: 36px;
   font-weight: 500;
   font-size: 12px;
-  color: rgba(0,0,0,0.9);
   line-height: 36px;
   text-align: center;
   letter-spacing: 3px;
-  padding-top: 0;
-  padding-left: 8px;
-  padding-right: 8px;
-  padding-bottom: 0;
-  margin-top: 6px;
-  margin-left: 4px;
-  margin-right: 4px;
-  margin-bottom: 6px;
+  padding: 0 8px 0 8px;
+  margin: 6px 4px 6px 4px;
   border: none;
 }
-
-input#add-query{
+.loading-image {
   display: none;
+}
+input{
+  &:focus {
+    outline: none;
+  }
+}
+input#add-query{
+  display: inline-block;
 }
 
 input#add-submit{
-  display: none;
+  display: inline-block;
+  transition: background-color 0.3s ease;
+  height: 36px;
+  background: #672E45;
+  color: white;
+  cursor: pointer;
+  width: 75px;
+}
+
+input#delete-submit{
+  display: inline-block;
   transition: background-color 0.3s ease;
   height: 36px;
   background: #672E45;
@@ -61,6 +71,7 @@ input#add-submit{
 }
 
 input[name="submit-search"] {
+  //border-radius: 10px;
   display: inline-block;
   transition: background-color 0.3s ease;
   height: 36px;
