@@ -2,11 +2,11 @@
   .search_form
     = form_tag(method: "POST", remote: true) do      #search_query.button
       .button
+        %input{placeholder: 'Num Results', name: 'result_number', class: 'buttonFlat', id: 'results', onfocus: "this.placeholder = ''"}
+      .button
         %input{placeholder: 'search', name: 'search_query', class: 'buttonFlat', id: "query", onfocus: "this.placeholder =''"}
       #submit.button
         %input{name: 'submit-search', value: 'submit', class: 'buttonFlat'}
-    .loading-image
-      = fa_icon 'spinner spin lg'
     = form_tag(method: 'POST', remote: true, id: "add-submit") do
       .button
         %input#add-query{placeholder: 'add', name: 'add-query', class: 'buttonFlat', onfocus: "this.placeholder =''"}
@@ -15,4 +15,7 @@
     = form_tag(method: "DELETE", remote: true, id: "delete") do
       .button
         %input#delete-submit{name: "delete", value: "clear", class: 'buttonFlat'}
+    .block-inline
+      #loading-image
+        = fa_icon 'spinner spin lg'
     %h1

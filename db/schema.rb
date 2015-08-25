@@ -18,7 +18,9 @@ ActiveRecord::Schema.define(version: 20150824140628) do
 
   create_table "find_foods", force: :cascade do |t|
     t.string   "search_query"
+    t.integer  "num_results"
     t.string   "name"
+    t.string   "group"
     t.integer  "food_id"
     t.text     "nutrients"
     t.datetime "created_at",   null: false
@@ -28,6 +30,7 @@ ActiveRecord::Schema.define(version: 20150824140628) do
   create_table "food_items", force: :cascade do |t|
     t.integer "food_id"
     t.string  "name"
+    t.string  "group"
     t.text    "nutrients"
   end
 
@@ -35,6 +38,7 @@ ActiveRecord::Schema.define(version: 20150824140628) do
     t.string "name"
     t.string "unit"
     t.string "value"
+    t.text   "measures"
   end
 
   create_table "users", force: :cascade do |t|

@@ -13,9 +13,10 @@
 @for $i from 1 through 40 {
   .brick {
     &.large-#{$i} {
-      height: auto;
       width: 300px;
       background: #fff;
+      min-height: 300px;
+      height: auto;
       a.delete-widget {
         display: block;
         color: #000;

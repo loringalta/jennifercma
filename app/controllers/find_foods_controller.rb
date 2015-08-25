@@ -21,6 +21,7 @@ class FindFoodsController < ApplicationController
 
   def create
     @@search_query = params[:name].downcase.gsub(' ', '%20')
+    @@num_results = params[:results].to_i
     render status: 200 unless @@search_query.nil?
   end
 
@@ -79,15 +80,17 @@ class FindFoodsController < ApplicationController
   end
 
   def find_foods
-    if FindFood.where(search_query: @@search_query).blank?
-      @search_body_hash = FindFood.json_parse_result(@@search_query)
-      if @search_body_hash.length == 1
+    if FindFood.where(search_query: @@search_query).where(num_results: @@num_results).blank?
+      @search_body_hash = FindFood.json_parse_result(@@search_query, @@num_results)
+      if @search_body_hash.length < 1 || @search_body_hash[0] == "no results"
         @search_body_hash = {empty: "No Entries Returned"}
       else
         @search_body_hash.each do |h|
           @food = FindFood.new
           @food.search_query = @@search_query
+          @food.num_results = @@num_results
           @food.name = h.name
+          @food.group = h.group
           @food.nutrients = h.nutrients
           @food.food_id = h.id
           @food.save

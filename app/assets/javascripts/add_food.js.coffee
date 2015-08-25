@@ -12,17 +12,8 @@ add_food = ->
           type: 'GET'
           datatype: 'json'
           url: '/find_food/food_info').success((data) ->
-            id = 0
-            for item in data
-              do (item) ->
-                id++
-                table = "<table class = 'pure-table'><thead><tr><th>#{item.name}</th></tr></thead>"
-                for nutrient in item.nutrients
-                  do (nutrient) ->
-                    table += "<tr><td>#{nutrient.name}</td><td>#{nutrient.value} #{nutrient.unit}</td></tr>"
-                table += "</tbody></table"
-                brick = "<div class='brick large-#{id}'><a class = 'delete-widget' href = '#'>x</a>#{table}</div>"
-                $('.gridly').append(brick)
+            new_table = new ConstructTable(data)
+            new_table.construct()
             $('.loading-image').hide('slide')
             )
         )

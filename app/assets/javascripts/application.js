@@ -12,6 +12,7 @@
 //
 //= require jquery
 //= require jquery-ui
+//= require construct_table
 //= require create_search_finding
 //= require find_food
 //= require add_food
