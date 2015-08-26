@@ -7,8 +7,9 @@ class root.ConstructTable
   constructor: (@data) ->
 
   construct: ->
-    if @data.empty
-      $('.search_form h1').html("No Entries Found")
+    $('.search_form h1').html('')
+    if @data != null && @data.status
+      $('.search_form h1').html(@data.message).slideDown()
     id = 0
     for item in @data
       do (item) ->
@@ -20,7 +21,7 @@ class root.ConstructTable
         table += "<tr><td>Group</td><td>#{item.group}</td></tr>"
         # for measure in nutrient.measures
         #   do (measure) ->
-        #     table += "<tr><td>#{measure.label} is</td><td>#{measure.eqv} g #{measure.value} g </td></tr>"
+        #     table += "<tr><td>label</td><td>#{measure.label} eqv to #{measure.eqv} g</td></tr>"
         table += "</tbody></table"
         brick = "<div class='brick large-#{id}'><a class = 'delete-widget' href = '#'>x</a>#{table}</div>"
         $('.gridly').append(brick)

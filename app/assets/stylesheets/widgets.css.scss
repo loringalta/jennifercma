@@ -1,7 +1,7 @@
 .gridly {
   position: relative;
-  width: 80%;
   margin: auto;
+  width: 90%;
 }
 
 .brick.small {
@@ -13,7 +13,7 @@
 @for $i from 1 through 40 {
   .brick {
     &.large-#{$i} {
-      width: 300px;
+      width: 280px;
       background: #fff;
       min-height: 300px;
       height: auto;

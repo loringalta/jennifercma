@@ -136,7 +136,7 @@ Copyright 2013 Kevin Sylvestre
       },
 	  responsive: false
     };
-	
+
     Gridly.gridly = function($el, options) {
       var data;
       if (options == null) {
@@ -153,7 +153,7 @@ Copyright 2013 Kevin Sylvestre
     function Gridly($el, settings) {
       if (settings == null) {
         settings = {};
-      }	  
+      }
       this.optimize = __bind(this.optimize, this);
       this.layout = __bind(this.layout, this);
       this.structure = __bind(this.structure, this);
@@ -171,9 +171,9 @@ Copyright 2013 Kevin Sylvestre
       this.$el = $el;
       this.settings = $.extend({}, Gridly.settings, settings);
 	  this.config = {};
-	  if(this.settings.responsive == true || this.settings.columns == undefined || !$.isNumeric(this.settings.columns)){		  
+	  if(this.settings.responsive == true || this.settings.columns == undefined || !$.isNumeric(this.settings.columns)){
 		  this.config.columns = Math.floor($el.width() / (this.settings.gutter + this.settings.base));
-		  
+
 		  $(win).resize(function(){
 			var data = $el.data('_gridly');
 			if(!!data){
@@ -184,7 +184,7 @@ Copyright 2013 Kevin Sylvestre
 	  } else {
 		this.config.columns = this.settings.columns;
 	  }
-	  	  
+
       this.ordinalize(this.$('> *'));
       if (this.settings.draggable !== false) {
         this.draggable();

@@ -2,8 +2,7 @@ Rails.application.routes.draw do
   resources :find_foods, except: [:new, :edit]
   resources :users
   root                'sessions#login'
-  # post   '/'       => 'foods#dashboard'
-  post   'find_food/add_food'  => 'find_foods#add_food'
+  put   'find_food/update'     => 'find_foods#update'
   get    'signup'              => 'static_pages#home'
   get    'login'               => 'sessions#new'
   post   'login'               => 'sessions#create'

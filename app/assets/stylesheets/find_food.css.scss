@@ -1,21 +1,28 @@
 .container {
   width: 80%;
   margin: auto;
-  padding-top: 100px;
+  padding-left: 39px;
+  padding-top: 64px;
   padding-bottom: 39px;
 }
 
 .search_dashboard{
+  padding-top: 50px;
   margin: auto;
   display: block;
 }
 
 .search_form {
+  left: 50%;
+  margin-left: -400px;
+  width: 800px;
+  position: fixed;
+  z-index: 1000;
   background: $green;
   display: inline-block;
   height: 50px;
   padding: 5px 9px 5px 9px;
-  margin: auto;
+  //margin: auto;
 }
 
 .button {
@@ -51,29 +58,22 @@ form {
   #loading-image {
     display: none;
     width: 20px;
+    margin-left: 5px;
+    margin-right: 5px;
   }
 }
 
 input{
+  display: inline-block;
   &:focus {
     outline: none;
   }
 }
-input#add-query{
+#add-query{
   display: inline-block;
 }
 
-input#add-submit{
-  display: inline-block;
-  transition: background-color 0.3s ease;
-  height: 36px;
-  background: $chart1;
-  color: white;
-  cursor: pointer;
-  width: 75px;
-}
-
-input#delete-submit{
+#add-submit{
   display: inline-block;
   transition: background-color 0.3s ease;
   height: 36px;
@@ -83,8 +83,17 @@ input#delete-submit{
   width: 75px;
 }
 
-input[name="submit-search"] {
-  //border-radius: 10px;
+#delete-submit{
+  display: inline-block;
+  transition: background-color 0.3s ease;
+  height: 36px;
+  background: $chart1;
+  color: white;
+  cursor: pointer;
+  width: 75px;
+}
+
+#submit {
   display: inline-block;
   transition: background-color 0.3s ease;
   height: 36px;

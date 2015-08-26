@@ -13,16 +13,11 @@
 //= require jquery
 //= require jquery-ui
 //= require construct_table
-//= require create_search_finding
 //= require find_food
 //= require add_food
 //= require delete_food
 //= require delete_widget
-//= require mocha
-//= require sinon
 //= require flotr2
-//= require chai
 //= require jquery.dataTables
-//= require dashboard
 //= require jquery.gridly
 //= require turbolinks

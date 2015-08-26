@@ -36,7 +36,7 @@ RSpec.configure do |config|
   config.order = :random
   config.include Capybara::DSL
   config.include FactoryGirl::Syntax::Methods
-  config.include Warden::Test::Helpers
+  # config.include Warden::Test::Helpers
 end
 
 Capybara.register_driver :poltergeist do |app|
