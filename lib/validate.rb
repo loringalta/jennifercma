@@ -1,4 +1,23 @@
 module Validate
+  class AddUser
+    include ActiveModel::Validations
+    attr_accessor :username, :email, :password
+
+    validates :username, presence: true, format: { with: /\A[a-zA-Z\s]+\z/,
+    message: "only allows letters" }
+
+    validates :email, presence: true
+
+    validates :password, presence: true
+
+    def initialize(params={})
+      @username      = params[:username]
+      @email         = params[:email]
+      @password      = params[:password]
+      ActionController::Parameters.new(params).permit(username, email, password)
+    end
+  end
+
   class AddFood
     include ActiveModel::Validations
     attr_accessor :add_name

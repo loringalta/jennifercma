@@ -1,5 +1,5 @@
 .container
-  .search_form
+  .search_form.shadow
     = form_tag(method: "POST", remote: true) do
       %input{placeholder: 'Num Results', name: 'result_number', class: 'buttonFlat', id: 'results', onfocus: "this.placeholder = ''"}
       %input{placeholder: 'search', name: 'search_query', class: 'buttonFlat', id: "query", onfocus: "this.placeholder =''"}

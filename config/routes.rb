@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   resources :find_foods, except: [:new, :edit]
   resources :users
-  root                'sessions#login'
+  root                            'sessions#login'
   put   'find_food/update'     => 'find_foods#update'
   get    'signup'              => 'static_pages#home'
   get    'login'               => 'sessions#new'

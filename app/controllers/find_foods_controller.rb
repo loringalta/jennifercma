@@ -31,12 +31,12 @@ class FindFoodsController < ApplicationController
 
   def update
     search = Validate::AddFood.new(params)
-      if search.valid?
-        @@search_query = search.add_name.gsub(' ', '%20')
-        # render(html: { render partial: 'find_foods/dashboard' })
-      else
-        render(json: { error: search.errors })
-      end
+    if search.valid?
+      @@search_query = search.add_name.gsub(' ', '%20')
+      # render(html: { render partial: 'find_foods/dashboard' })
+    else
+      render(json: { error: search.errors })
+    end
   end
 
   private
