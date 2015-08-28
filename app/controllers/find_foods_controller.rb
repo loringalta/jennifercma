@@ -2,8 +2,10 @@ require 'pp'
 class FindFoodsController < ApplicationController
   include Rails.application.routes.url_helpers
   skip_before_filter :verify_authenticity_token
+
   @@search_query
-  @@num_results = 10
+  @@num_results
+
   def create
     validate_params
   end
@@ -33,7 +35,6 @@ class FindFoodsController < ApplicationController
     search = Validate::AddFood.new(params)
     if search.valid?
       @@search_query = search.add_name.gsub(' ', '%20')
-      # render(html: { render partial: 'find_foods/dashboard' })
     else
       render(json: { error: search.errors })
     end

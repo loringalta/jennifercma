@@ -1,9 +1,11 @@
 class SessionsController < ApplicationController
-  def show
-    @user = User.find(params[:id])
-  end
+  skip_before_filter :verify_authenticity_token
 
   def new
+    @user = User.new
+  end
 
+  def destroy
+    reset_session
   end
 end

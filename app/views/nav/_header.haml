@@ -1,9 +1,10 @@
 %nav#nav
   %ul
     %li#name
-      %a{href: "name"} Name
+      = @user.name
     %li#user
       %a{href: "user"} User
     %li#logout
-      %a{href: "logout"} Logout
+      = link_to "log out", method: "DELETE"
+      -# %a{href: "logout"} Logout
   %section#section1
