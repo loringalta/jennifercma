@@ -1,0 +1,29 @@
+$page: #1f3a43;
+$yellow: #f1e6b2;
+$ferrous: #dc4405;
+$valentine: #ba0c2f;
+$poy: #672e45;
+$green: #719e8b;
+$peach: #f2b4a8;
+$chart1: #995667;
+$breakpoints-phone: 640px;
+$breakpoints-tablet: 768px;
+$desktop-width: 1024px;
+
+@mixin tablet {
+  @media (min-width: #{$breakpoints-tablet}) and (max-width: #{desktop-width - 1px}) {
+    @content;
+  }
+}
+
+@mixin phone {
+  @media (min-width: #{$breakpoints-phone}) and (max-width: #{breakpoints-tablet - 1px}) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media (min-width: #{desktop-width}) {
+    @content;
+  }
+}

@@ -1,22 +1,22 @@
-%nav#nav
-  %ul
-    %li
-      = form_tag(method: "POST", remote: true) do
-        %input{placeholder: 'Num Results', name: 'result_number', class: 'buttonFlat', id: 'results', onfocus: "this.placeholder = ''"}
-        %input{placeholder: 'search', name: 'search_query', class: 'buttonFlat', id: "query", onfocus: "this.placeholder =''"}
-        #submit.button{name: 'submit-search', value: 'submit', class: 'buttonFlat'}
-          submit
-    %li
-      = form_tag(method: 'put', remote: true, id: "add-submit") do
-        %input#add-query{placeholder: 'add', name: 'add-query', class: 'buttonFlat', onfocus: "this.placeholder =''"}
-        #add-submit.button{name: 'add-submit', value: 'add', class: 'buttonFlat'}
-          Add
-    %li
-      = form_tag(method: "DELETE", remote: true, id: "delete") do
-        #delete-submit.button{name: "delete", value: "destroy", class: 'buttonFlat'}
-          Delete
-    %li
-      .block-inline
-        #loading-image
-          = fa_icon 'spinner spin lg'
-  %section#section1
+.container
+  %nav.clearfix
+    %ul.clearfix
+      %li#search
+        = form_tag(method: "POST", remote: true) do
+          %input{placeholder: 'Num Results', name: 'result_number', class: 'buttonFlat', id: 'results', onfocus: "this.placeholder = ''"}
+          %input{placeholder: 'search', name: 'search_query', class: 'buttonFlat', id: "query", onfocus: "this.placeholder =''"}
+          #submit.button{name: 'submit-search', value: 'submit', class: 'buttonFlat'}
+            submit
+      %li#delete
+        = form_tag(method: "DELETE", remote: true, id: "delete") do
+          #delete-submit.button{name: "delete", value: "destroy", class: 'buttonFlat'}
+            Delete
+      %li#add
+        = form_tag(method: 'put', remote: true, id: "add-submit") do
+          %input#add-query{placeholder: 'add', name: 'add-query', class: 'buttonFlat', onfocus: "this.placeholder =''"}
+          #add-submit.button{name: 'add-submit', value: 'add', class: 'buttonFlat'}
+            Add
+      %li
+        .block-inline
+          #loading-image
+            = fa_icon 'spinner spin lg'
