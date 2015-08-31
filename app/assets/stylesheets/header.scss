@@ -5,24 +5,7 @@ nav {
   z-index: 800;
   background: $yellow;
   box-shadow: 5px 5px 0 rgba(0,0,0,.1);
-  &.clearfix{
-    *zoom: 1;
-
-    &:before, &:after {
-      content: " ";
-      display: table;
-    }
-    &:after {
-      clear: both;
-    }
-  }
-  @include tablet {
-    height: auto;
-  }
-
-  @include phone {
-    border-bottom: 0;
-  }
+  min-width: 500px;
 
   &:before {
     content: "";
@@ -34,7 +17,6 @@ nav {
     height: 100%;
     z-index: 1;
   }
-
   &:after {
     clear: both;
   }
@@ -46,16 +28,6 @@ nav {
     text-transform: uppercase;
     text-align: center;
 
-    @include tablet {
-      width: 100%;
-      display: block;
-    }
-
-    @include phone {
-      display: none;
-      height: auto;
-    }
-
     li {
       display: inline-block;
       padding: 1em 0;
@@ -63,34 +35,12 @@ nav {
       font-size: 0.9em;
       float: left;
 
-      #pull {
-        display: none;
-      }
-
-      @include tablet {
-        width: 50%;
-        float: left;
-        position: relative;
-      }
-
-      @include phone {
-        #pull {
-          display: block;
-          background-color: $valentine;
-          width: 100%;
-          position: relative;
-
-          &:after {
-            content: "";
-            background-color: image-url("nav.jpg") no-repeat;
-            width: 30px;
-            height: 30px;
-            display: inline-block;
-            position: absolute;
-            right: 15px;
-            top: 10px;
-          }
-        }
+      a {
+        letter-spacing: 2px;
+        text-decoration: none;
+        color: black;
+        font-size: 0.9em;
+        font-weight: bold;
       }
     }
   }

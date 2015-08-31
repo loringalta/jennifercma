@@ -2,6 +2,16 @@
   width: 100%;
   margin: auto;
   position: relative;
+
+  .search-data {
+    position: relative;
+    margin: auto;
+    padding-top: 100px;
+  }
+}
+
+form {
+  display: inline-block;
 }
 
 .button {
@@ -9,10 +19,7 @@
   background-color: rgba(0,0,0,0);
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
-form {
-  display: inline-block;
-}
-/* top right bottom left*/
+
 .buttonFlat {
   text-transform: uppercase;
   display: inline-block;
@@ -37,9 +44,7 @@ form {
   display: inline-block;
   #loading-image {
     display: none;
-    width: 20px;
-    margin-left: 5px;
-    margin-right: 5px;
+    margin: auto;
   }
 }
 
@@ -49,6 +54,7 @@ input{
     outline: none;
   }
 }
+
 #add-query{
   display: inline-block;
 }

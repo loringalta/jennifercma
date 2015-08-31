@@ -13,17 +13,17 @@ $ ->
           $('#loading-image').show('slide')
           $.ajax(
             type: 'GET'
-            url: '/find_food/dashboard').success((data) ->
-              $('#search-data').html(data)
+            url: '/find_foods/show').success((data) ->
+              $('.search-data').html(data)
               $('.gridly').gridly(
                 base: 280
                 gutter: 10
                 'responsive': true
               )
               $.ajax(
-                type: 'GET'
+                type: 'PUT'
                 dataType: 'json'
-                url: 'find_food/food_info').success((data)->
+                url: '/find_foods/update').success((data)->
                   new_table = new ConstructTable(data)
                   new_table.construct()
                   $('#loading-image').hide('slide')

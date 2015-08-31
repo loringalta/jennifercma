@@ -4,18 +4,18 @@ add_food = ->
     e.stopPropagation()
     add_query = $('input[name=add-query]').val()
     $.ajax(
-      type: 'put'
+      type: 'POST'
       datatype: 'json'
-      url: '/find_food/update'
+      url: '/find_foods/add'
       data: {'add_name': add_query}).success((data) ->
         if data.error
           $('.search_form h1').html(data.error.add_name)
         else
           $('#loading-image').show('slide')
           $.ajax(
-            type: 'GET'
+            type: 'PUT'
             datatype: 'json'
-            url: '/find_food/food_info').success((data) ->
+            url: '/find_foods/update').success((data) ->
               new_table = new ConstructTable(data)
               new_table.construct()
               $('#loading-image').hide('slide')

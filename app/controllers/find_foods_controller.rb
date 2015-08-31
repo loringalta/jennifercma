@@ -10,16 +10,16 @@ class FindFoodsController < ApplicationController
     validate_params
   end
 
-  def food_info
+  def update
     find_foods
     respond_to do |format|
       format.json { render json: @search_body_hash }
     end
   end
 
-  def dashboard
+  def show
     respond_to do |format|
-      format.html { render partial: 'find_foods/dashboard' }
+      format.html { render partial: 'find_foods/show' }
     end
   end
 
@@ -31,10 +31,11 @@ class FindFoodsController < ApplicationController
     head :no_content
   end
 
-  def update
+  def add
     search = Validate::AddFood.new(params)
     if search.valid?
       @@search_query = search.add_name.gsub(' ', '%20')
+      pp @@search_query
     else
       render(json: { error: search.errors })
     end
