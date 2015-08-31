@@ -1,9 +1,9 @@
-= class: 'main-form first' do
+%form.main-form.first
   .main-form.title
     %h1 Sign-up
   .main-form.body
     = text_field_tag :username, nil, class: 'main-form body input', placeholder: 'Username'
     = text_field_tag :email, nil, class: 'main-form body input', placeholder: 'Email Address'
     = text_field_tag :password, nil, class: 'main-form body input', placeholder: "Password"
-    = button_to "Log In", login_path, class: "btn"
-    = submit_tag "Register", class: "btn"
+    = button_to("Log In", login_path, class: "btn")
+    = button_to("Register", signup_path, class: "btn")
